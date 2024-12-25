@@ -1,45 +1,44 @@
+// Purpose: User model for the social network API
+
+
 const { Schema, model } = require('mongoose');
 
-// User Schema
-const userSchema = new Schema(
-  {
+const userSchema = new Schema({
     username: {
-      type: String,
-      unique: true,
-      required: true,
-      trim: true,
+        type: String,
+        required: true,
+        unique: true,
+        trim: true
     },
     email: {
-      type: String,
-      required: true,
-      unique: true,
-      match: [/.+@.+\..+/, 'Please enter a valid email address'],
+        type: String,
+        required: true,
+        unique: true,
+        match: [/.+@.+\..+/, 'Please enter a valid e-mail address']
     },
     thoughts: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: 'Thought',
-      },
-    ],
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Thought'
+        }
+    ],  
     friends: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: 'User',
-      },
-    ],
-  },
-  {
-    toJSON: { virtuals: true },
-    id: false,
-  }
-);
-
-// Virtual for friend count
-userSchema.virtual('friendCount').get(function () {
-  return this.friends.length;
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'User'
+        }
+    ]
+},
+{
+    toJSON: {
+        virtuals: true
+    },
+    id: false
 });
 
-// Create the User model
-const User = model('User', userSchema);
+userSchema.virtual('friendCount').get(function() {
+    return this.friends.length;
+});
 
+const User = model('User', userSchema);
 module.exports = User;
