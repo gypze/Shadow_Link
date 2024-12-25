@@ -102,7 +102,9 @@ Use a tool like Insomnia or Postman to interact with the API. The available rout
 
 ## Screenshots
 
-![Screenshot of the Social Network API in action]("C:\Users\Gypze\OneDrive\Pictures\Screenshots\Shadow Link.png")C:
+![Shadow Link](https://github.com/user-attachments/assets/a93aed2a-1690-46d8-bbcd-741f21a4fd02)
+
+
 
 ---
 
