@@ -102,7 +102,7 @@ Use a tool like Insomnia or Postman to interact with the API. The available rout
 
 ## Screenshots
 
-![Screenshot of the Social Network API in action](./assets/screenshot.png)C:
+![Screenshot of the Social Network API in action]("C:\Users\Gypze\OneDrive\Pictures\Screenshots\Shadow Link.png")C:
 
 ---
 
